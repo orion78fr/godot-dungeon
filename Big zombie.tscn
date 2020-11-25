@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/ennemies/Undeads/Zombie_Big/zombie_big_idle_anim/zombie_big_idle_anim_f1.png" type="Texture" id=1]
+[ext_resource path="res://assets/ennemies/Undeads/Zombie_Big/zombie_big_idle_anim/zombie_big_idle_anim_f2.png" type="Texture" id=2]
+[ext_resource path="res://assets/ennemies/Undeads/Zombie_Big/zombie_big_idle_anim/zombie_big_idle_anim_f3.png" type="Texture" id=3]
+[ext_resource path="res://assets/ennemies/Undeads/Zombie_Big/zombie_big_idle_anim/zombie_big_idle_anim_f4.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.97462, 11.3767 )
+
+[node name="Big zombie" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.157486, 5.51215 )
+shape = SubResource( 2 )
